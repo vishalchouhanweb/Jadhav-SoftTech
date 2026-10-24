@@ -182,7 +182,7 @@ const CTA = () => {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('hello@agencyspire.com');
+      await navigator.clipboard.writeText('hello@jadhavsofttech.com');
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2200);
     } catch {
@@ -342,7 +342,7 @@ const CTA = () => {
               ) : (
                 <>
                   <Mail size={16} className="text-[#a06cd5]" />
-                  hello@agencyspire.com
+                  hello@jadhavsofttech.com
                 </>
               )}
             </button>

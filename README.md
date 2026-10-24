@@ -1,6 +1,6 @@
-# AgencySpire
+# jadhavsofttech
 
-AgencySpire is a premium creative technology agency website — Design, Development, AI & Automation, Marketing, 3D. Built as a modern full-stack app with a React + Vite frontend and Express backend for contact handling.
+jadhavsofttech is a premium creative technology agency website — Design, Development, AI & Automation, Marketing, 3D. Built as a modern full-stack app with a React + Vite frontend and Express backend for contact handling.
 
 Live stack highlights:
 - **Client**: React 19, Vite 8, Tailwind CSS 4, Framer Motion + GSAP, Lenis smooth scroll, Three.js / OGL webGL, React Hook Form + Zod
@@ -66,7 +66,7 @@ SMTP_PORT=587
 SMTP_SECURE=false
 SMTP_USER=
 SMTP_PASS=
-CONTACT_TO_EMAIL=hello@agencyspire.com
+CONTACT_TO_EMAIL=hello@jadhavsofttech.com
 PORT=4000
 ```
 
@@ -90,8 +90,8 @@ Server: `start`
 - Frontend validation: `client/src/validation/contact.schema.js` (Zod)
 - Server validation: `server/middleware/validateContact.js`
 - Email service: `server/services/email.service.js`
-- Subject is dynamic: `New AgencySpire Contact Inquiry — {Name}`
-- From = AgencySpire <SMTP_USER>, Reply-To = visitor email
+- Subject is dynamic: `New jadhavsofttech Contact Inquiry — {Name}`
+- From = jadhavsofttech <SMTP_USER>, Reply-To = visitor email
 - HTML email is inline-CSS, responsive, escapes/sanitizes all user input
 
 ## Recent Improvements

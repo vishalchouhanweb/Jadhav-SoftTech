@@ -18,7 +18,7 @@ app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 app.get('/api/health', (req, res) => {
-  res.json({ success: true, message: 'AgencySpire API is running' });
+  res.json({ success: true, message: 'jadhavsofttech API is running' });
 });
 
 app.use('/api', contactRoutes);

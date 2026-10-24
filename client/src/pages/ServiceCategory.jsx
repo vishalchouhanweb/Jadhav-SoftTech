@@ -115,7 +115,7 @@ const ServiceCategory = () => {
   const heroContentY = useTransform(scrollYProgress, [0, 1], [0, 120]);
 
   useEffect(() => {
-    window.dispatchEvent(new CustomEvent('agencyspire:scroll-to-top'));
+    window.dispatchEvent(new CustomEvent('jadhavsofttech:scroll-to-top'));
   }, [category]);
 
   const handleMouse = useCallback((e) => {

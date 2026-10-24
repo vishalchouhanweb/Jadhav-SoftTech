@@ -64,14 +64,14 @@ function AppContent() {
       const { offset } = e.detail || {};
       lenis.scrollTo(0, { offset: offset || 0, immediate: true });
     };
-    window.addEventListener('agencyspire:scroll-to-top', handleScrollToTop);
+    window.addEventListener('jadhavsofttech:scroll-to-top', handleScrollToTop);
 
     const raf = (time) => lenis.raf(time * 1000);
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      window.removeEventListener('agencyspire:scroll-to-top', handleScrollToTop);
+      window.removeEventListener('jadhavsofttech:scroll-to-top', handleScrollToTop);
       gsap.ticker.remove(raf);
       lenis.destroy();
       lenisRef.current = null;

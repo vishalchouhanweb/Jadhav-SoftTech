@@ -41,7 +41,7 @@ const Footer = () => {
     {
       title: "Connect",
       links: [
-        { label: "Careers", href: "mailto:hello@agencyspire.com?subject=Careers%20at%20AgencySpire" },
+        { label: "Careers", href: "mailto:hello@jadhavsofttech.com?subject=Careers%20at%20jadhavsofttech" },
         { label: "Contact", href: "/contact" },
         {
           label: "Start a Project",
@@ -55,8 +55,8 @@ const Footer = () => {
   const contactInfo = [
     {
       icon: <Mail size={18} className="text-brand-accent" />,
-      text: "hello@agencyspire.com",
-      href: "mailto:hello@agencyspire.com",
+      text: "hello@jadhavsofttech.com",
+      href: "mailto:hello@jadhavsofttech.com",
     },
     {
       icon: <MapPin size={18} className="text-brand-accent" />,
@@ -65,9 +65,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Briefcase size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/company/agencyspire" },
-    { icon: <Camera size={20} />, label: "Instagram", href: "https://www.instagram.com/agencyspire" },
-    { icon: <MessageCircle size={20} />, label: "Twitter", href: "https://twitter.com/agencyspire" },
+    { icon: <Briefcase size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/company/jadhavsofttech" },
+    { icon: <Camera size={20} />, label: "Instagram", href: "https://www.instagram.com/jadhavsofttech" },
+    { icon: <MessageCircle size={20} />, label: "Twitter", href: "https://twitter.com/jadhavsofttech" },
     { icon: <Globe size={20} />, label: "Website", href: "/" },
   ];
 
@@ -90,7 +90,7 @@ const Footer = () => {
                 <div className="w-8 h-8 shape-hex bg-brand-accent flex items-center justify-center">
                   <span className="w-2.5 h-2.5 rounded-full bg-brand-bg"></span>
                 </div>
-                <span className="text-brand-text text-3xl font-display font-bold tracking-tight">AgencySpire</span>
+                <span className="text-brand-text text-3xl font-display font-bold tracking-tight">jadhavsofttech</span>
               </div>
               <p className="text-base text-gray-200 leading-relaxed max-w-sm font-medium">
                 We design, build, automate and grow digital businesses â€” combining strategy, design, engineering and AI into one connected process.
@@ -178,14 +178,14 @@ const Footer = () => {
             </div>
 
             <p className="text-center md:text-left text-gray-200 font-medium">
-              &copy; {new Date().getFullYear()} AgencySpire. All rights reserved.
+              &copy; {new Date().getFullYear()} jadhavsofttech. All rights reserved.
             </p>
           </div>
         </div>
 
-        {/* Text hover effect — large outlined AGENCYSPIRE */}
+        {/* Text hover effect — large outlined jadhavsofttech */}
         <div className="lg:flex hidden h-[24rem] -mt-30 -mb-18">
-          <TextHoverEffect text="AGENCYSPIRE" className="z-50" />
+          <TextHoverEffect text="jadhavsofttech" className="z-50" />
         </div>
 
         <FooterBackgroundGradient />
