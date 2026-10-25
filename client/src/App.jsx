@@ -17,6 +17,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact = lazy(() => import('./pages/Contact'));
 const ServiceCategory = lazy(() => import('./pages/ServiceCategory'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const HireCategory = lazy(() => import('./pages/HireCategory'));
+const HireDetail = lazy(() => import('./pages/HireDetail'));
 
 const SectionFallback = () => (
   <div className="flex h-[40vh] items-center justify-center bg-brand-bg">
@@ -144,6 +146,8 @@ function AppContent() {
             <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
             <Route path="/services/:category" element={<PageTransition><ServiceCategory /></PageTransition>} />
             <Route path="/services/:category/:serviceId" element={<PageTransition><ServiceDetail /></PageTransition>} />
+            <Route path="/hire/:category" element={<PageTransition><HireCategory /></PageTransition>} />
+            <Route path="/hire/:category/:serviceId" element={<PageTransition><HireDetail /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
           </Routes>
         </Suspense>

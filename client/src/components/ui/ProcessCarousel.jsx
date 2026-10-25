@@ -100,13 +100,13 @@ function renderStepImages(step) {
         return (
           <div className="relative h-full w-full">
             <AnimatedStepImage
-              alt="Discovery workshop"
+              alt="Discussing project requirements"
               className={cn(defaultImg, 'left-0 top-[12%] w-[48%] sm:left-0 sm:top-[10%] sm:w-[52%] md:left-0 md:top-[10%] md:w-[52%]')}
               src={processImages.step1img1}
               preset="slideInLeft"
             />
             <AnimatedStepImage
-              alt="Team collaboration"
+              alt="Developers collaborating"
               className={cn(defaultImg, 'right-0 top-[38%] w-[48%] sm:right-0 sm:top-[38%] sm:w-[58%] md:right-0 md:top-[44%] md:w-[44%]')}
               src={processImages.step1img2}
               preset="slideInRight"
@@ -118,13 +118,13 @@ function renderStepImages(step) {
         return (
           <div className="relative h-full w-full">
             <AnimatedStepImage
-              alt="Strategy session"
+              alt="Reviewing candidate profiles"
               className={cn(defaultImg, 'left-0 top-[16%] w-[48%] sm:left-0 sm:top-[14%] sm:w-[52%] md:left-0 md:top-[14%] md:w-[52%]')}
               src={processImages.step2img1}
               preset="fadeInScale"
             />
             <AnimatedStepImage
-              alt="Roadmap planning"
+              alt="Shortlisting talent"
               className={cn(defaultImg, 'right-0 top-[46%] w-[48%] sm:right-0 sm:top-[44%] sm:w-[44%] md:right-0 md:top-[44%] md:w-[44%]')}
               src={processImages.step2img2}
               preset="fadeInScale"
@@ -135,7 +135,7 @@ function renderStepImages(step) {
       case 2:
         return (
           <AnimatedStepImage
-            alt="Interface design"
+            alt="Interviewing developers"
             className={cn(defaultImg, 'left-0 top-[20%] w-[84%] sm:left-0 sm:top-[18%] sm:w-[90%] md:left-0 md:top-[18%] md:w-[90%]')}
             src={processImages.step3img}
             preset="fadeInScale"
@@ -144,7 +144,7 @@ function renderStepImages(step) {
       case 3:
         return (
           <AnimatedStepImage
-            alt="Engineering build"
+            alt="Developer onboarding"
             className={cn(defaultImg, 'left-0 top-[20%] w-[84%] sm:left-0 sm:top-[18%] sm:w-[90%] md:left-0 md:top-[18%] md:w-[90%]')}
             src={processImages.step4img}
             preset="fadeInScale"
@@ -153,7 +153,7 @@ function renderStepImages(step) {
       case 4:
         return (
           <AnimatedStepImage
-            alt="Launch analytics"
+            alt="Scaling the team"
             className={cn(defaultImg, 'left-0 top-[20%] w-[84%] sm:left-0 sm:top-[18%] sm:w-[90%] md:left-0 md:top-[18%] md:w-[90%]')}
             src={processImages.step5img}
             preset="fadeInScale"
@@ -223,7 +223,7 @@ export function ProcessCarousel({ step: controlledStep, className }) {
                   transition={{ delay: 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <span className="h-px w-5 sm:w-6 bg-brand-accent/50" />
-                  Chapter 0{step + 1} — {active.name}
+                  Step 0{step + 1} — {active.name}
                 </motion.div>
                 <motion.h3
                   className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white md:text-3xl"

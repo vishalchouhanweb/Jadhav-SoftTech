@@ -182,7 +182,7 @@ const CTA = () => {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('hello@jadhavsofttech.com');
+      await navigator.clipboard.writeText('info@jadhavsofttech.com');
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2200);
     } catch {
@@ -264,46 +264,52 @@ const CTA = () => {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#a06cd5] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#a06cd5]" />
             </span>
-            Accepting Projects for Q3/Q4
+            Available for New Projects
           </div>
 
           {/* Eyebrow */}
           <div data-cta-reveal className="mb-6 inline-flex items-center gap-3 font-mono text-[0.65rem] uppercase tracking-[0.35em] text-[#a06cd5]">
             <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#a06cd5]/60" />
             <Sparkles size={14} />
-            Final Move
+            Let's Build Together
             <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#a06cd5]/60" />
           </div>
 
           {/* Headline — word-by-word masked reveal */}
           <h2
             ref={headlineRef}
-            className="max-w-4xl text-[2.5rem] sm:text-4xl md:text-5xl lg:text-7xl xl:text-[6.5rem] font-display font-bold leading-[0.95] tracking-[-0.04em] text-[#25152d]"
+            className="max-w-4xl text-[2.1rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.75rem] font-display font-bold leading-[0.95] tracking-[-0.04em] text-[#25152d]"
           >
             <span className="inline-block overflow-hidden pb-3 align-bottom">
-              <span className="cta-word inline-block">Have</span>
+              <span className="cta-word inline-block">Let's</span>
             </span>{' '}
             <span className="inline-block overflow-hidden pb-3 align-bottom">
-              <span className="cta-word inline-block">something</span>
+              <span className="cta-word inline-block">Build</span>
+            </span>{' '}
+            <span className="inline-block overflow-hidden pb-3 align-bottom">
+              <span className="cta-word inline-block">Your</span>
+            </span>{' '}
+            <span className="inline-block overflow-hidden pb-3 align-bottom">
+              <span className="cta-word inline-block">Next</span>
             </span>
             <br className="hidden md:block" />
             <span className="relative inline-block overflow-hidden pb-3 align-bottom">
               <span className="cta-word cta-word-ambitious relative inline-block font-light italic">
-                ambitious
+                Technology
                 <span className="absolute -bottom-1 left-0 h-[3px] w-full bg-gradient-to-r from-[#a06cd5]/70 via-[#a06cd5]/30 to-transparent" />
               </span>
             </span>{' '}
             <span className="inline-block overflow-hidden pb-3 align-bottom">
-              <span className="cta-word inline-block">in</span>
+              <span className="cta-word inline-block">Success</span>
             </span>{' '}
             <span className="inline-block overflow-hidden pb-3 align-bottom">
-              <span className="cta-word inline-block">mind?</span>
+              <span className="cta-word inline-block">Story</span>
             </span>
           </h2>
 
           {/* Subtext */}
           <p data-cta-reveal className="mt-10 max-w-xl text-lg leading-relaxed text-[#674a70] md:text-xl">
-            Let's turn the right idea into something people can use, remember and grow with.
+            Whether you need a skilled technology professional or a complete engineering team, we're ready to help.
           </p>
 
           {/* CTA buttons */}
@@ -320,7 +326,7 @@ const CTA = () => {
                 }}
               >
                 <span data-magnetic-inner className="relative z-10 flex items-center gap-3 will-change-transform">
-                  Let's Build It
+                  Talk to an Expert
                   <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1.5" />
                 </span>
                 {/* Shine sweep */}
@@ -342,7 +348,7 @@ const CTA = () => {
               ) : (
                 <>
                   <Mail size={16} className="text-[#a06cd5]" />
-                  hello@jadhavsofttech.com
+                  info@jadhavsofttech.com
                 </>
               )}
             </button>
@@ -352,15 +358,15 @@ const CTA = () => {
           <div data-cta-reveal className="mt-16 flex flex-wrap items-center justify-center gap-8 border-t border-[#674a70]/15 pt-8 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#674a70]/80">
             <div className="flex items-center gap-2.5">
               <ShieldCheck size={15} className="text-[#a06cd5]" />
-              NDA Protected
+              Build Better
             </div>
             <div className="flex items-center gap-2.5">
               <Zap size={15} className="text-[#a06cd5]" />
-              Response within 24 Hours
+              Hire Smarter
             </div>
             <div className="flex items-center gap-2.5">
               <Star size={15} className="text-[#a06cd5]" />
-              No Obligation Consultation
+              Scale Faster
             </div>
           </div>
         </div>

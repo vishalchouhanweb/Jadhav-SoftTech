@@ -27,7 +27,7 @@ function getTransporter() {
 
 export async function sendContactEmail(data) {
   const { name, email, company, service, budget, message } = data;
-  const to = process.env.CONTACT_TO_EMAIL || 'hello@jadhavsofttech.com';
+  const to = process.env.CONTACT_TO_EMAIL || 'info@jadhavsofttech.com';
 
   const safeName = sanitizeInput(name);
   const safeEmail = sanitizeInput(email);

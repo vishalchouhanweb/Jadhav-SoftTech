@@ -20,29 +20,29 @@ const capabilities = [
     index: 1,
     nodeIndex: 1,
     no: '01',
-    name: 'Creative Direction',
-    desc: 'Editorial design systems, brand expression, and high-fidelity interfaces.',
+    name: 'Staff Augmentation',
+    desc: 'Pre-vetted developers and specialists who join your team fast - contract, dedicated or long-term.',
   },
   {
     index: 2,
     nodeIndex: 2,
     no: '02',
-    name: 'Full-Stack Engineering',
-    desc: 'Scalable, end-to-end product engineering — frontend, backend, infrastructure.',
+    name: 'Software Development',
+    desc: 'Custom web, mobile and enterprise applications, built end-to-end with modern engineering.',
   },
   {
     index: 3,
     nodeIndex: 3,
     no: '03',
-    name: 'AI & Automation',
-    desc: 'Intelligent agents, workflow automation, and production AI systems.',
+    name: 'HRMS Solutions',
+    desc: 'Configurable HR software for payroll, attendance, leave and the full employee lifecycle.',
   },
   {
     index: 4,
     nodeIndex: 4,
     no: '04',
-    name: 'Digital Growth',
-    desc: 'Performance, analytics, and experimentation to compound outcomes over time.',
+    name: 'Data, BI & CRM',
+    desc: 'Power BI dashboards, Dynamics 365 and Zoho CRM, and data platforms that drive decisions.',
   },
 ];
 
@@ -199,13 +199,13 @@ const WhoWeAre = () => {
         <div ref={headingRef} className="max-w-5xl">
           <div className="section-title-kdm mb-10">
             <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[3.2rem] font-display font-bold leading-[1.05] text-brand-text">
-              Who We Are ?
+              Our Expertise
             </h2>
           </div>
 
           <h3 className="text-[2.25rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-display font-bold leading-[1.02] tracking-[-0.02em] text-brand-text">
             <span className="reveal-mask">
-              <span className="reveal-mask-inner inline-block">A Creative</span>
+              <span className="reveal-mask-inner inline-block">Your</span>
             </span>{' '}
             <span className="reveal-mask">
               <span className="reveal-mask-inner inline-block">Technology</span>
@@ -219,7 +219,7 @@ const WhoWeAre = () => {
           <p className="mt-10 text-lg md:text-xl lg:text-2xl font-body text-brand-text-muted leading-relaxed max-w-3xl">
             <span className="reveal-mask">
               <span className="reveal-mask-inner inline-block">
-                We design, build, automate and grow digital businesses — combining strategy, design, engineering and AI into one connected process.
+                Jadhav SoftTech helps businesses build innovative digital solutions and access skilled technology talent, so you can move faster.
               </span>
             </span>
           </p>
@@ -260,7 +260,7 @@ const WhoWeAre = () => {
           {/* Capability list */}
           <div ref={listRef} className="order-2 lg:order-2 relative">
             <div className="text-[10px] font-mono tracking-[0.3em] text-brand-accent/70 uppercase mb-8">
-              What we connect
+              What we offer
             </div>
 
             <ul className="space-y-0 border-t border-brand-accent/15">
@@ -336,7 +336,7 @@ const WhoWeAre = () => {
             </ul>
 
             <p className="mt-10 text-sm font-mono tracking-widest text-brand-text-muted/60 uppercase">
-              One system. Five connected disciplines.
+              One partner. Build it, staff it, scale it.
             </p>
           </div>
         </div>

@@ -11,11 +11,11 @@ const FORM_FIELDS = [
   { name: 'company', label: 'Company', type: 'text', placeholder: 'Your company', half: true },
   { name: 'service', label: 'Service', type: 'select', half: true, options: [
     { value: '', label: 'Select a service' },
-    { value: 'development', label: 'Development' },
-    { value: 'design', label: 'Design' },
-    { value: 'ai-automation', label: 'AI & Automation' },
-    { value: 'marketing', label: 'Marketing' },
-    { value: '3d', label: '3D' },
+    { value: 'hire-developer', label: 'Hire a Developer' },
+    { value: 'software-development', label: 'Software Development' },
+    { value: 'hrms', label: 'HRMS Solutions' },
+    { value: 'data-bi-crm', label: 'Data, BI & CRM' },
+    { value: 'other', label: 'Something else' },
   ]},
   { name: 'budget', label: 'Budget Range', type: 'select', options: [
     { value: '', label: 'Select budget range' },
@@ -28,9 +28,9 @@ const FORM_FIELDS = [
 ];
 
 const CONTACT_INFO = [
-  { icon: Mail, label: 'hello@jadhavsofttech.com', href: 'mailto:hello@jadhavsofttech.com', clickable: true },
-  { icon: Phone, label: '+1 (234) 567-890', href: 'tel:+1234567890', clickable: true },
-  { icon: MapPin, label: 'New York, NY', clickable: false },
+  { icon: Mail, label: 'info@jadhavsofttech.com', href: 'mailto:info@jadhavsofttech.com', clickable: true },
+  { icon: Phone, label: '(+91) 9131484668', href: 'tel:+919131484668', clickable: true },
+  { icon: MapPin, label: '69, Balajidham Colony, Dewas, Madhya Pradesh - 455001', clickable: false },
 ];
 
 function FormField({ field, register, error, index }) {
@@ -140,7 +140,7 @@ const Contact = () => {
             transition={{ delay: 0.5 }}
             className="max-w-xl mx-auto text-lg text-[#674a70] font-medium"
           >
-            Tell us about your project. We'll get back to you within 24 hours.
+            Hire skilled developers or build a complete solution - tell us what you need and we'll get back to you.
           </motion.p>
         </div>
       </section>
@@ -166,7 +166,7 @@ const Contact = () => {
                       <CheckCircle2 className="w-8 h-8 text-white" />
                     </motion.div>
                     <h3 className="font-display text-2xl font-bold text-[#25152d] mb-3">Message Sent!</h3>
-                    <p className="text-[#674a70]">We'll get back to you within 24 hours.</p>
+                    <p className="text-[#674a70]">Thank you - we'll get back to you soon.</p>
                   </motion.div>
                 ) : (
                   <motion.form
@@ -245,8 +245,8 @@ const Contact = () => {
               </div>
 
               {[
-                { title: 'Response Time', desc: 'We typically respond within 24 hours on business days. For urgent inquiries, reach us directly via email.' },
-                { title: 'Office Hours', desc: 'Monday — Friday: 9:00 AM — 6:00 PM (EST)\nSaturday — Sunday: Closed' },
+                { title: 'Response Time', desc: 'We reply to every enquiry as soon as we can. For urgent requirements, email or call us directly.' },
+                { title: 'Our Office', desc: '69, Balajidham Colony, Dewas,\nMadhya Pradesh - 455001' },
               ].map((card, i) => (
                 <motion.div
                   key={card.title}

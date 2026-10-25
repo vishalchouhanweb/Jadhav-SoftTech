@@ -82,37 +82,37 @@ const Hero = () => {
           <div>
             <div className="hero-eyebrow mb-8">
               <div className="ribbon-tag">
-                Creative Technology Partner
+                IT Talent &amp; Software Solutions
               </div>
             </div>
             
-            <h1 ref={headlineRef} className="text-[2.75rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] font-display font-bold leading-[0.9] tracking-tight mb-6 sm:mb-8">
+            <h1 ref={headlineRef} className="text-[2.1rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] font-display font-bold leading-[1.02] tracking-tight mb-6 sm:mb-8">
               <div className="overflow-hidden pb-3">
-                <div className="hero-line-inner">WE BUILD</div>
+                <div className="hero-line-inner">Build Digital Solutions.</div>
               </div>
               <div className="overflow-hidden pb-3">
-                <div className="hero-line-inner">WHAT'S</div>
+                <div className="hero-line-inner">Hire Skilled Tech Talent.</div>
               </div>
               <div className="overflow-hidden pb-3">
                 <div className="hero-line-inner text-brand-accent relative">
-                  NEXT.
+                  Scale Without Limits.
                   <span className="absolute -bottom-2 left-0 w-3/4 h-[3px] bg-gradient-to-r from-brand-accent/60 to-transparent" />
                 </div>
               </div>
             </h1>
             
             <p ref={textRef} className="text-base sm:text-xl md:text-2xl text-brand-text-muted max-w-xl mb-8 sm:mb-12 font-body font-normal leading-relaxed text-balance">
-              Brands, digital experiences, technology and growth — built under one roof.
+              Build Better. Hire Smarter. Scale Faster.
             </p>
             
             {/* KDM-style CTA buttons */}
             <div ref={ctaRef} className="flex flex-col items-start sm:flex-row sm:items-center gap-6 pointer-events-auto">
               <ParticleButton href="#contact">
-                Let's Talk
+                Hire Talent
                 <ArrowRight size={16} />
               </ParticleButton>
-              <a href="#work" className="btn-kdm btn-kdm-outline">
-                See Our Work
+              <a href="#contact" className="btn-kdm btn-kdm-outline">
+                Build Your Solution
                 <span className="btn-kdm-icon">
                   <ArrowRight size={16} />
                 </span>
@@ -159,8 +159,8 @@ const Hero = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="ribbon-tag mb-3">Creative Technology</div>
-                <p className="text-sm text-brand-text-muted">Design, build, automate & grow — under one roof.</p>
+                <div className="ribbon-tag mb-3">Talent &amp; Solutions</div>
+                <p className="text-sm text-brand-text-muted">Build better. Hire smarter. Scale faster.</p>
               </div>
             </div>
           </div>

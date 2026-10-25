@@ -2,22 +2,16 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../../lib/utils';
-import { Code2, Palette, Bot, Megaphone, Box, ChevronDown } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import MagneticButton from '../ui/MagneticButton';
-
-const SERVICE_CATEGORIES = [
-  { label: 'Development', href: '/services/development', icon: Code2, color: '#a06cd5' },
-  { label: 'Design', href: '/services/design', icon: Palette, color: '#D8B4E2' },
-  { label: 'AI & Automation', href: '/services/ai-automation', icon: Bot, color: '#7a4fa0' },
-  { label: 'Marketing', href: '/services/marketing', icon: Megaphone, color: '#c49bda' },
-  { label: '3D', href: '/services/3d', icon: Box, color: '#D8B4E2' },
-];
+import BrandMark from '../ui/BrandMark';
+import { HIRE_MENU, hireRoleHref, hireGroupHref } from '../../data/hireRoles';
+import RoleIcon from '../ui/RoleIcon';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '#', dropdown: true },
-  { label: 'Work', href: '/#work' },
-  { label: 'Process', href: '/#process' },
+  { label: 'About', href: '/about' },
+  { label: 'Hire Developer', href: '/hire', dropdown: true },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -26,7 +20,8 @@ const LiquidGlassNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [onLight, setOnLight] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileHireOpen, setMobileHireOpen] = useState(false);
+  const [mobileGroupOpen, setMobileGroupOpen] = useState(null);
   const dropdownRef = useRef(null);
   const dropdownTimeout = useRef(null);
   const navRef = useRef(null);
@@ -78,8 +73,18 @@ const LiquidGlassNavbar = () => {
   useEffect(() => {
     setDropdownOpen(false);
     setIsOpen(false);
-    setMobileServicesOpen(false);
+    setMobileHireOpen(false);
+    setMobileGroupOpen(null);
   }, [location.pathname]);
+
+  // Close mega menu on Escape
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setDropdownOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -145,43 +150,31 @@ const LiquidGlassNavbar = () => {
                 onLight ? 'hover:bg-[#5b346d]/8' : 'hover:bg-white/[0.06]'
               )}
             >
-              <div className="relative flex h-9 w-9 items-center justify-center">
-                <div
-                  className="h-5 w-5 rotate-45 rounded-[3px]"
-                  style={{
-                    background: 'linear-gradient(135deg, #f5e0ff 0%, #D8B4E2 55%, #a06cd5 100%)',
-                    boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.6), 0 3px 6px rgba(160,108,213,0.4)',
-                  }}
-                >
-                  <div
-                    className="absolute inset-1 rounded-[1px]"
-                    style={{ background: onLight ? 'rgba(255,255,255,0.55)' : 'rgba(10,10,11,0.4)' }}
-                  />
-                </div>
-              </div>
+              <BrandMark />
               <span
                 className={cn(
                   'font-display text-lg font-semibold tracking-tight transition-colors',
                   onLight ? 'text-[#25152d]' : 'text-white/90'
                 )}
               >
-                JadhavSofttech 
+                Jadhav SoftTech
               </span>
             </Link>
 
-            <div className="relative z-10 flex flex-1 items-center justify-center gap-1 sm:gap-2">
+            <div className="z-10 flex flex-1 items-center justify-center gap-1 sm:gap-2">
               {NAV_LINKS.map((link) =>
                 link.dropdown ? (
-                  /* ── Services Dropdown ── */
+                  /* ── Hire Developer Mega Menu ── */
                   <div
                     key={link.label}
                     ref={dropdownRef}
-                    className="relative"
                     onMouseEnter={handleDropdownEnter}
                     onMouseLeave={handleDropdownLeave}
                   >
                     <button
                       onClick={() => setDropdownOpen(!dropdownOpen)}
+                      aria-haspopup="true"
+                      aria-expanded={dropdownOpen}
                       className={cn(
                         'flex items-center gap-1 rounded-full px-4 sm:px-5 py-2.5 sm:py-3 font-display text-sm font-medium transition-all min-w-[44px]',
                         onLight
@@ -201,60 +194,92 @@ const LiquidGlassNavbar = () => {
                     <AnimatePresence>
                       {dropdownOpen && (
                         <motion.div
-                          initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                          initial={{ opacity: 0, y: 8, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                          exit={{ opacity: 0, y: 8, scale: 0.98 }}
                           transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 rounded-2xl overflow-hidden"
-                          style={{
-                            background: onLight
-                              ? 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(247,243,250,0.95) 100%)'
-                              : 'linear-gradient(180deg, rgba(20,18,25,0.97) 0%, rgba(15,13,18,0.98) 100%)',
-                            boxShadow: onLight
-                              ? '0 0 0 1px rgba(91,52,109,0.15), 0 20px 60px rgba(91,52,109,0.25), 0 4px 16px rgba(91,52,109,0.12)'
-                              : '0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.3)',
-                            backdropFilter: 'blur(40px) saturate(1.8)',
-                            WebkitBackdropFilter: 'blur(40px) saturate(1.8)',
-                          }}
+                          className="absolute left-0 right-0 top-full pt-3"
                         >
-                          <div className="p-2">
-                            {SERVICE_CATEGORIES.map((cat, i) => {
-                              const CatIcon = cat.icon;
-                              return (
+                          <div
+                            className="overflow-hidden rounded-3xl"
+                            style={{
+                              background: onLight
+                                ? 'linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(247,243,250,0.97) 100%)'
+                                : 'linear-gradient(180deg, rgba(20,18,25,0.97) 0%, rgba(15,13,18,0.98) 100%)',
+                              boxShadow: onLight
+                                ? '0 0 0 1px rgba(91,52,109,0.15), 0 20px 60px rgba(91,52,109,0.25), 0 4px 16px rgba(91,52,109,0.12)'
+                                : '0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.3)',
+                              backdropFilter: 'blur(40px) saturate(1.8)',
+                              WebkitBackdropFilter: 'blur(40px) saturate(1.8)',
+                            }}
+                          >
+                            <div className="grid grid-cols-3 lg:grid-cols-6 gap-x-3 gap-y-6 p-6">
+                              {HIRE_MENU.map((group, gi) => (
                                 <motion.div
-                                  key={cat.label}
-                                  initial={{ opacity: 0, x: -10 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: i * 0.04, duration: 0.3 }}
+                                  key={group.title}
+                                  initial={{ opacity: 0, y: 6 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: gi * 0.04, duration: 0.3 }}
                                 >
                                   <Link
-                                    to={cat.href}
+                                    to={hireGroupHref(group.slug)}
                                     onClick={() => setDropdownOpen(false)}
-                                    className={cn(
-                                      'flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 group',
-                                      onLight
-                                        ? 'hover:bg-[#5b346d]/8'
-                                        : 'hover:bg-white/[0.06]'
-                                    )}
+                                    className="mb-2 block min-h-0 px-2.5 font-mono text-[10px] uppercase tracking-[0.16em] transition-opacity hover:opacity-70"
+                                    style={{ color: onLight ? '#a06cd5' : '#D8B4E2' }}
                                   >
-                                    <div
-                                      className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
-                                      style={{ background: `${cat.color}18` }}
-                                    >
-                                      <CatIcon className="w-4 h-4" style={{ color: cat.color }} />
-                                    </div>
-                                    <span className={cn(
-                                      'font-display text-sm font-medium transition-colors',
-                                      onLight
-                                        ? 'text-[#674a70] group-hover:text-[#25152d]'
-                                        : 'text-white/60 group-hover:text-white'
-                                    )}>
-                                      {cat.label}
-                                    </span>
+                                    {group.title}
                                   </Link>
+                                  <ul>
+                                    {group.roles.map((role) => (
+                                      <li key={role.slug}>
+                                        <Link
+                                          to={hireRoleHref(group.slug, role.slug)}
+                                          onClick={() => setDropdownOpen(false)}
+                                          className={cn(
+                                            'group flex min-h-0 items-center gap-2.5 rounded-lg px-2.5 py-1.5 font-display text-[13px] leading-snug transition-colors',
+                                            onLight
+                                              ? 'text-[#674a70] hover:text-[#25152d] hover:bg-[#5b346d]/8'
+                                              : 'text-white/55 hover:text-white hover:bg-white/[0.06]'
+                                          )}
+                                        >
+                                          <RoleIcon label={role.label} groupIndex={gi} />
+                                          <span>{role.label}</span>
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
                                 </motion.div>
-                              );
-                            })}
+                              ))}
+                            </div>
+
+                            <div
+                              className="flex items-center justify-between gap-6 px-8 py-4"
+                              style={{
+                                borderTop: onLight
+                                  ? '1px solid rgba(91,52,109,0.12)'
+                                  : '1px solid rgba(255,255,255,0.06)',
+                              }}
+                            >
+                              <p
+                                className={cn(
+                                  'font-display text-xs',
+                                  onLight ? 'text-[#674a70]' : 'text-white/40'
+                                )}
+                              >
+                                Flexible Engagement Models &bull; Direct Interviews &bull; Dedicated Support
+                              </p>
+                              <Link
+                                to="/contact"
+                                onClick={() => setDropdownOpen(false)}
+                                className={cn(
+                                  'group flex shrink-0 items-center gap-1.5 font-display text-xs font-semibold transition-colors',
+                                  onLight ? 'text-[#5b346d] hover:text-[#25152d]' : 'text-[#D8B4E2] hover:text-white'
+                                )}
+                              >
+                                Talk to an Expert
+                                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                              </Link>
+                            </div>
                           </div>
                         </motion.div>
                       )}
@@ -292,7 +317,7 @@ const LiquidGlassNavbar = () => {
                     : 'linear-gradient(135deg, #D8B4E2, #a06cd5)',
                 }}
               >
-                Get Started
+                Hire Talent
               </Link>
             </MagneticButton>
           </div>
@@ -337,27 +362,14 @@ const LiquidGlassNavbar = () => {
             />
 
             <Link to="/" className="relative z-10 flex items-center gap-2 rounded-full px-4 py-2">
-              <div className="relative flex h-7 w-7 items-center justify-center">
-                <div
-                  className="h-4 w-4 rotate-45 rounded-[2px]"
-                  style={{
-                    background: 'linear-gradient(135deg, #f5e0ff 0%, #D8B4E2 55%, #a06cd5 100%)',
-                    boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.6), 0 2px 4px rgba(160,108,213,0.4)',
-                  }}
-                >
-                  <div
-                    className="absolute inset-0.5 rounded-[1px]"
-                    style={{ background: onLight ? 'rgba(255,255,255,0.55)' : 'rgba(10,10,11,0.4)' }}
-                  />
-                </div>
-              </div>
+              <BrandMark size="sm" />
               <span
                 className={cn(
                   'font-display text-base font-semibold tracking-tight transition-colors',
                   onLight ? 'text-[#25152d]' : 'text-white/90'
                 )}
               >
-                jadhavsofttech
+                Jadhav SoftTech
               </span>
             </Link>
 
@@ -412,7 +424,8 @@ const LiquidGlassNavbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ type: 'spring', bounce: 0.15, duration: 0.5 }}
-              className="relative mx-4 mt-2 overflow-hidden rounded-3xl"
+              data-lenis-prevent
+              className="relative mx-4 mt-2 max-h-[calc(100dvh-110px)] overflow-y-auto overscroll-contain rounded-3xl"
               style={{
                 background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)',
                 boxShadow: '0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 1px rgba(255,255,255,0.08)',
@@ -423,7 +436,7 @@ const LiquidGlassNavbar = () => {
               <div className="flex flex-col gap-1 p-3">
                 {NAV_LINKS.map((link, i) =>
                   link.dropdown ? (
-                    /* ── Mobile Services Accordion ── */
+                    /* ── Mobile Hire Developer Accordion ── */
                     <motion.div
                       key={link.label}
                       initial={{ opacity: 0, x: -20 }}
@@ -431,7 +444,7 @@ const LiquidGlassNavbar = () => {
                       transition={{ delay: i * 0.05, type: 'spring', bounce: 0.15 }}
                     >
                       <button
-                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        onClick={() => setMobileHireOpen(!mobileHireOpen)}
                         className="flex items-center justify-between w-full rounded-2xl px-5 py-4 font-display text-base font-medium text-white/60 transition-all hover:bg-white/[0.06] hover:text-white min-h-[52px]"
                       >
                         <div className="flex items-center">
@@ -439,7 +452,7 @@ const LiquidGlassNavbar = () => {
                           {link.label}
                         </div>
                         <motion.div
-                          animate={{ rotate: mobileServicesOpen ? 180 : 0 }}
+                          animate={{ rotate: mobileHireOpen ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
                         >
                           <ChevronDown className="w-4 h-4 text-white/40" />
@@ -447,7 +460,7 @@ const LiquidGlassNavbar = () => {
                       </button>
 
                       <AnimatePresence>
-                        {mobileServicesOpen && (
+                        {mobileHireOpen && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
@@ -455,24 +468,52 @@ const LiquidGlassNavbar = () => {
                             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                             className="overflow-hidden"
                           >
-                            <div className="pl-10 pb-2 space-y-0.5">
-                              {SERVICE_CATEGORIES.map((cat) => {
-                                const CatIcon = cat.icon;
+                            <div className="pl-5 pb-2 space-y-0.5">
+                              {HIRE_MENU.map((group, gi) => {
+                                const open = mobileGroupOpen === group.title;
                                 return (
-                                  <Link
-                                    key={cat.label}
-                                    to={cat.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="flex items-center gap-3 rounded-xl px-4 py-3 transition-all hover:bg-white/[0.06] min-h-[48px]"
-                                  >
-                                    <div
-                                      className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                                      style={{ background: `${cat.color}18` }}
+                                  <div key={group.title}>
+                                    <button
+                                      onClick={() => setMobileGroupOpen(open ? null : group.title)}
+                                      className="flex w-full items-center justify-between rounded-xl px-4 py-3 min-h-[48px] transition-all hover:bg-white/[0.06]"
                                     >
-                                      <CatIcon className="w-3.5 h-3.5" style={{ color: cat.color }} />
-                                    </div>
-                                    <span className="font-display text-sm text-white/50">{cat.label}</span>
-                                  </Link>
+                                      <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#D8B4E2]">
+                                        {group.title}
+                                      </span>
+                                      <motion.div
+                                        animate={{ rotate: open ? 180 : 0 }}
+                                        transition={{ duration: 0.2 }}
+                                      >
+                                        <ChevronDown className="w-3.5 h-3.5 text-white/40" />
+                                      </motion.div>
+                                    </button>
+
+                                    <AnimatePresence>
+                                      {open && (
+                                        <motion.div
+                                          initial={{ height: 0, opacity: 0 }}
+                                          animate={{ height: 'auto', opacity: 1 }}
+                                          exit={{ height: 0, opacity: 0 }}
+                                          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                                          className="overflow-hidden"
+                                        >
+                                          <div className="pl-3 pb-2">
+                                            {group.roles.map((role) => (
+                                              <Link
+                                                key={role.slug}
+                                                to={hireRoleHref(group.slug, role.slug)}
+                                                onClick={() => setIsOpen(false)}
+                                                className="group flex items-center gap-3 rounded-xl px-4 py-2.5 min-h-[44px] font-display text-sm text-white/50 transition-all hover:bg-white/[0.06] hover:text-white"
+                                              >
+                                                <RoleIcon label={role.label} groupIndex={gi} />
+                                                <span>{role.label}</span>
+                                              </Link>
+                                            ))}
+                                          </div>
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
                                 );
                               })}
                             </div>
@@ -511,7 +552,7 @@ const LiquidGlassNavbar = () => {
                       boxShadow: '0 4px 20px rgba(216,180,226,0.25)',
                     }}
                   >
-                    Get Started
+                    Hire Talent
                   </Link>
                 </MagneticButton>
               </div>

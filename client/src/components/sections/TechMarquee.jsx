@@ -39,6 +39,10 @@ import {
   TbBrandOpenai
 } from 'react-icons/tb';
 
+// step2: extra icons
+import { SiMysql, SiWoocommerce, SiZoho } from 'react-icons/si';
+import { TbBrandAdobe, TbBrandOffice, TbBrandWindows, TbBriefcase, TbBrush, TbChartBar, TbHierarchy2, TbLayout, TbPlug, TbReportAnalytics, TbServer2, TbTopologyStar3 } from 'react-icons/tb';
+
 const techCategories = [
   {
     name: 'DESIGN',
@@ -47,6 +51,8 @@ const techCategories = [
       { name: 'Adobe Illustrator', icon: TbBrandAdobeIllustrator },
       { name: 'Figma', icon: SiFigma },
       { name: 'Adobe XD', icon: TbBrandAdobeXd },
+      { name: 'UI/UX', icon: TbLayout },
+      { name: 'Graphic Design', icon: TbBrush },
     ]
   },
   {
@@ -70,16 +76,7 @@ const techCategories = [
     items: [
       { name: 'Webflow', icon: SiWebflow },
       { name: 'Shopify', icon: SiShopify },
-    ]
-  },
-  {
-    name: '3D & MOTION',
-    items: [
-      { name: 'Three.js', icon: SiThreedotjs },
-      { name: 'GSAP', icon: SiGreensock },
-      { name: 'Blender', icon: SiBlender },
-      { name: 'After Effects', icon: TbBrandAdobeAfterEffect },
-      { name: 'Premiere Pro', icon: TbBrandAdobePremiere },
+      { name: 'WooCommerce', icon: SiWoocommerce },
     ]
   },
   {
@@ -94,16 +91,25 @@ const techCategories = [
     ]
   },
   {
-    name: 'MARKETING & GROWTH',
+    name: 'ENTERPRISE & CRM',
     items: [
-      { name: 'SEO', icon: TbSeo },
-      { name: 'AEO', icon: TbSeo },
-      { name: 'Google Ads', icon: SiGoogleads },
-      { name: 'Meta Ads', icon: SiMeta },
-      { name: 'Social Media', icon: TbChartArrows },
-      { name: 'Content Marketing', icon: TbChartArrows },
-      { name: 'Email Marketing', icon: TbChartArrows },
-      { name: 'Analytics', icon: SiGoogleanalytics },
+      { name: 'MS D365 CRM', icon: TbBrandWindows },
+      { name: 'Zoho CRM', icon: SiZoho },
+      { name: 'SharePoint', icon: TbBrandOffice },
+      { name: 'Workfront', icon: TbTopologyStar3 },
+      { name: 'AEM', icon: TbBrandAdobe },
+    ]
+  },
+  {
+    name: 'DATA & BI',
+    items: [
+      { name: 'Power BI', icon: TbChartBar },
+      { name: 'Power Platforms', icon: TbPlug },
+      { name: 'Informatica IDMC', icon: TbHierarchy2 },
+      { name: 'MySQL', icon: SiMysql },
+      { name: 'IBM', icon: TbServer2 },
+      { name: 'Data Analyst', icon: TbReportAnalytics },
+      { name: 'Business Analyst', icon: TbBriefcase },
     ]
   }
 ];

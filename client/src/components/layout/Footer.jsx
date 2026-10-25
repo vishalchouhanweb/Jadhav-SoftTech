@@ -1,7 +1,8 @@
 import { memo } from 'react';
-import { Mail, MapPin, Camera, MessageCircle, Briefcase, Globe } from "lucide-react";
+import { Mail, MapPin, Phone, Briefcase, Globe } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { FooterBackgroundGradient, TextHoverEffect } from "../ui/hover-footer";
+import BrandMark from "../ui/BrandMark";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -32,19 +33,19 @@ const Footer = () => {
     {
       title: "Explore",
       links: [
-        { label: "Work", href: "/#work" },
-        { label: "Services", href: "/services" },
-        { label: "About", href: "/#about" },
+        { label: "Success Stories", href: "/#work" },
+        { label: "Hire Developer", href: "/hire" },
+        { label: "About", href: "/about" },
         { label: "Process", href: "/#process" },
       ],
     },
     {
       title: "Connect",
       links: [
-        { label: "Careers", href: "mailto:hello@jadhavsofttech.com?subject=Careers%20at%20jadhavsofttech" },
+        { label: "Careers", href: "mailto:info@jadhavsofttech.com?subject=Careers%20at%20Jadhav%20SoftTech" },
         { label: "Contact", href: "/contact" },
         {
-          label: "Start a Project",
+          label: "Hire Talent",
           href: "/contact",
           pulse: true,
         },
@@ -55,19 +56,22 @@ const Footer = () => {
   const contactInfo = [
     {
       icon: <Mail size={18} className="text-brand-accent" />,
-      text: "hello@jadhavsofttech.com",
-      href: "mailto:hello@jadhavsofttech.com",
+      text: "info@jadhavsofttech.com",
+      href: "mailto:info@jadhavsofttech.com",
     },
     {
       icon: <MapPin size={18} className="text-brand-accent" />,
-      text: "New York, NY",
+      text: "69, Balajidham Colony, Dewas, Madhya Pradesh\u00a0-\u00a0455001",
+    },
+    {
+      icon: <Phone size={18} className="text-brand-accent" />,
+      text: "(+91) 9131484668",
+      href: "tel:+919131484668",
     },
   ];
 
   const socialLinks = [
-    { icon: <Briefcase size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/company/jadhavsofttech" },
-    { icon: <Camera size={20} />, label: "Instagram", href: "https://www.instagram.com/jadhavsofttech" },
-    { icon: <MessageCircle size={20} />, label: "Twitter", href: "https://twitter.com/jadhavsofttech" },
+    { icon: <Briefcase size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/company/jadhav-softtech/" },
     { icon: <Globe size={20} />, label: "Website", href: "/" },
   ];
 
@@ -87,13 +91,11 @@ const Footer = () => {
             {/* Brand section */}
             <div className="flex flex-col space-y-5">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 shape-hex bg-brand-accent flex items-center justify-center">
-                  <span className="w-2.5 h-2.5 rounded-full bg-brand-bg"></span>
-                </div>
-                <span className="text-brand-text text-3xl font-display font-bold tracking-tight">jadhavsofttech</span>
+                <BrandMark />
+                <span className="text-brand-text text-3xl font-display font-bold tracking-tight">Jadhav SoftTech</span>
               </div>
               <p className="text-base text-gray-200 leading-relaxed max-w-sm font-medium">
-                We design, build, automate and grow digital businesses â€” combining strategy, design, engineering and AI into one connected process.
+                Jadhav SoftTech helps businesses build innovative digital solutions and access skilled technology talent. Build Better. Hire Smarter. Scale Faster.
               </p>
             </div>
 
@@ -178,14 +180,14 @@ const Footer = () => {
             </div>
 
             <p className="text-center md:text-left text-gray-200 font-medium">
-              &copy; {new Date().getFullYear()} jadhavsofttech. All rights reserved.
+              &copy; {new Date().getFullYear()} Jadhav SoftTech. All rights reserved.
             </p>
           </div>
         </div>
 
         {/* Text hover effect — large outlined jadhavsofttech */}
         <div className="lg:flex hidden h-[24rem] -mt-30 -mb-18">
-          <TextHoverEffect text="jadhavsofttech" className="z-50" />
+          <TextHoverEffect text="Jadhav SoftTech" className="z-50" />
         </div>
 
         <FooterBackgroundGradient />

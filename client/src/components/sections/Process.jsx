@@ -21,13 +21,13 @@ const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
 const SectionHeader = () => (
   <div>
     <div className="section-title-kdm mb-6">
-      <h2 className="text-[2rem] font-display font-bold leading-[1.05] text-brand-text md:text-[2.5rem] lg:text-[3.2rem]">Our Methodology</h2>
+      <h2 className="text-[2rem] font-display font-bold leading-[1.05] text-brand-text md:text-[2.5rem] lg:text-[3.2rem]">How It Works</h2>
     </div>
     <h3 className="max-w-5xl text-[2.25rem] font-display font-bold leading-[1.02] tracking-[-0.02em] text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
-      Built in <span className="font-light italic text-brand-accent">chapters.</span>
+      Hire in <span className="font-light italic text-brand-accent">five steps.</span>
     </h3>
     <p className="mt-6 max-w-md text-base leading-relaxed text-white/70 md:text-lg">
-      A focused sequence from first question to lasting momentum — five chapters, one continuous climb.
+      From first conversation to a productive team - five simple steps to add skilled developers to your project.
     </p>
   </div>
 );
@@ -192,7 +192,7 @@ const Process = () => {
               href="#contact"
               className="group mt-7 inline-flex items-center gap-3 border-b border-brand-accent/40 pb-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-brand-accent transition-colors hover:text-white"
             >
-              Start your chapter
+              Hire Talent
               <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
@@ -252,7 +252,7 @@ const Process = () => {
             href="#contact"
             className="group mt-8 sm:mt-10 inline-flex items-center gap-3 border-b border-brand-accent/40 pb-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-brand-accent transition-colors hover:text-white min-h-[44px]"
           >
-            Start your chapter
+            Hire Talent
             <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>

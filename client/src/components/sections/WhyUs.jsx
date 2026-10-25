@@ -7,12 +7,14 @@ import SnakeGame from '../ui/SnakeGame';
 gsap.registerPlugin(ScrollTrigger);
 
 const agencySlides = [
-  { name: 'Brand Systems', description: 'Identity systems that give ambitious companies a clear, memorable point of view.', image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=75' },
-  { name: 'Digital Products', description: 'Thoughtful interfaces that turn complex ideas into effortless digital experiences.', image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=75' },
-  { name: 'AI Workflows', description: 'Intelligent automation that gives teams more time to focus on meaningful work.', image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=75' },
-  { name: 'Growth Platforms', description: 'Scalable foundations built to support the next stage of your business.', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=75' },
-  { name: 'Creative Direction', description: 'A sharper creative point of view, from the first idea to the final interaction.', image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=75' },
-  { name: 'Long-Term Impact', description: 'Digital work that keeps improving, performing and creating value after launch.', image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=1400&q=75' },
+  { name: 'Power Platforms & BI', description: 'Low-code apps, automation and Power BI dashboards that turn raw data into real-time decisions.', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=75' },
+  { name: 'MS D365 CRM', description: 'Microsoft Dynamics 365 implementation, customization and integration for sales and service teams.', image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=75' },
+  { name: 'ERP Development', description: 'Custom ERP modules and integrations that connect finance, operations and supply chain.', image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=1400&q=75' },
+  { name: 'Salesforce', description: 'Salesforce developers and admins for configuration, development, integrations and ongoing support.', image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=75' },
+  { name: 'Oracle', description: 'Oracle developers and consultants for database, application and cloud projects.', image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=75' },
+  { name: 'SAP', description: 'SAP specialists to implement, extend and support your core business processes.', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=75' },
+  { name: 'Ecommerce', description: 'Scalable online stores and commerce platforms, from WooCommerce to custom builds.', image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=75' },
+  { name: 'UI/UX', description: 'Research-led interface design that makes complex products simple to use.', image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=75' },
 ];
 
 const WhyUs = () => {
@@ -88,7 +90,7 @@ const WhyUs = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/20 to-brand-bg/5" />
                 </div>
                 <div className="relative z-10 flex h-full flex-col justify-end pb-4 md:pb-8">
-                  <span className="scene-01-slide-number font-mono text-xs tracking-[0.3em] text-brand-accent">0{index + 1} / 06</span>
+                  <span className="scene-01-slide-number font-mono text-xs tracking-[0.3em] text-brand-accent">{String(index + 1).padStart(2, '0')} / {String(agencySlides.length).padStart(2, '0')}</span>
                   <h4 className="mt-3 max-w-3xl text-3xl font-display font-bold leading-[0.98] text-white md:text-6xl">{slide.name}</h4>
                   <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/70 md:text-lg">{slide.description}</p>
                 </div>

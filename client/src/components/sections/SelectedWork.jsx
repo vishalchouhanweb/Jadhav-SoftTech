@@ -11,57 +11,43 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: 'Nebula Identity',
-    category: 'Brand System',
-    year: '2026',
-    description: 'A futuristic identity framework for a constellation of digital products.',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1024&auto=format&fit=crop',
-    tags: ['Identity', 'Type', 'Motion'],
+    title: 'HRMS Platform',
+    category: 'HRMS Solution',
+    description: 'A human resource management system that brings employee records, attendance and HR workflows into one place.',
+    image: '/images/success/1_hrms.jpg',
+    tags: ['HRMS', 'Web App', 'Automation'],
   },
   {
     id: 2,
-    title: 'Aurora Commerce',
-    category: 'Digital Product',
-    year: '2025',
-    description: 'Immersive storefront prototype with cinematic transitions and motion-first interactions.',
-    image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1024&auto=format&fit=crop',
-    tags: ['WebGL', 'Three.js', 'UI'],
+    title: 'Ticket Booking Platform',
+    category: 'Booking Platform',
+    description: 'An online ticket booking platform built for smooth, reliable reservations.',
+    image: '/images/success/2_ticket.jpg',
+    tags: ['Booking', 'Web App', 'Realtime'],
   },
   {
     id: 3,
-    title: 'Pulse Studio',
-    category: 'Creative Direction',
-    year: '2025',
-    description: 'Editorial platform for a creative studio with a focus on visual storytelling.',
-    image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1024&auto=format&fit=crop',
-    tags: ['Editorial', 'CMS', 'Motion'],
+    title: 'AI Car Industry Leads',
+    category: 'AI Software',
+    description: 'AI software that analyses automotive industry data to surface qualified leads.',
+    image: '/images/success/3_ai_car.jpg',
+    tags: ['AI', 'Data', 'Lead Generation'],
   },
   {
     id: 4,
-    title: 'Lumen Workspace',
-    category: 'SaaS Platform',
-    year: '2026',
-    description: 'Real-time collaborative workspace that blends AI workflows with structured design.',
-    image: 'https://images.unsplash.com/photo-1618172193763-c511deb635ca?q=80&w=1024&auto=format&fit=crop',
-    tags: ['AI', 'Realtime', 'SaaS'],
+    title: 'Real-Time Power BI Dashboards',
+    category: 'Business Intelligence',
+    description: 'Power BI dashboards that show live business data so teams can decide faster.',
+    image: '/images/success/4_powerbi.jpg',
+    tags: ['Power BI', 'Dashboards', 'Realtime'],
   },
   {
     id: 5,
-    title: 'Orbit Dashboard',
-    category: 'Fintech',
-    year: '2025',
-    description: 'Real-time financial analytics dashboard with cinematic data visualization.',
-    image: 'https://images.unsplash.com/photo-1633167606207-d840b5070fc2?q=80&w=1024&auto=format&fit=crop',
-    tags: ['Dashboard', 'Realtime', 'Data'],
-  },
-  {
-    id: 6,
-    title: 'Nova AI',
-    category: 'AI Platform',
-    year: '2026',
-    description: 'Conversational AI product experience with cinematic onboarding flows.',
-    image: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1024&auto=format&fit=crop',
-    tags: ['AI', 'Agents', 'Onboarding'],
+    title: 'Manufacturing CRM',
+    category: 'CRM Application',
+    description: 'A CRM application that manages every module of a manufacturing business end to end.',
+    image: '/images/success/5_crm.jpg',
+    tags: ['CRM', 'Manufacturing', 'All Modules'],
   },
 ];
 
@@ -157,12 +143,12 @@ const SelectedWork = () => {
             <div className="flex items-end justify-between border-b border-white/10 pb-7">
               <div>
                 <div className="section-title-kdm mb-10">
-                  <h2 className="text-[2rem] font-display font-bold leading-[1.05] text-brand-text md:text-[2.5rem] lg:text-[3.2rem]">Selected Work</h2>
+                  <h2 className="text-[2rem] font-display font-bold leading-[1.05] text-brand-text md:text-[2.5rem] lg:text-[3.2rem]">Success Stories</h2>
                 </div>
                 <h3 className="max-w-5xl text-[2.25rem] font-display font-bold leading-[1.02] tracking-[-0.02em] text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">Featured <span className="italic font-light text-brand-accent">Projects.</span></h3>
-                <p className="mt-10 max-w-3xl text-lg font-body leading-relaxed text-white/70 md:text-xl lg:text-2xl">Six cinematic case studies — scroll through the carousel.</p>
+                <p className="mt-10 max-w-3xl text-lg font-body leading-relaxed text-white/70 md:text-xl lg:text-2xl">Five success stories — scroll through the carousel.</p>
               </div>
-              <span className="hidden pb-1 font-mono text-[0.62rem] uppercase tracking-[0.3em] text-white/55 xl:block">Case studies / 2025—26</span>
+              <span className="hidden pb-1 font-mono text-[0.62rem] uppercase tracking-[0.3em] text-white/55 xl:block">Success stories</span>
             </div>
 
             <div className="mt-8 grid min-h-0 flex-1 grid-cols-12 gap-10">
@@ -187,9 +173,9 @@ const SelectedWork = () => {
       <div className="lg:hidden">
         <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-24">
           <div className="mb-12 sm:mb-14 border-b border-white/10 pb-6 sm:pb-8">
-            <div className="section-title-kdm mb-6"><h2 className="text-[2rem] font-display font-bold leading-[1.05] text-brand-text md:text-[2.5rem]">Selected Work</h2></div>
+            <div className="section-title-kdm mb-6"><h2 className="text-[2rem] font-display font-bold leading-[1.05] text-brand-text md:text-[2.5rem]">Success Stories</h2></div>
             <h3 className="text-3xl sm:text-4xl font-display font-bold leading-[1.02] tracking-[-0.02em] text-brand-text md:text-5xl">Featured <span className="italic font-light text-brand-accent">Projects.</span></h3>
-            <p className="mt-6 max-w-md text-base sm:text-lg font-body leading-relaxed text-white/70">Six cinematic case studies — built to move.</p>
+            <p className="mt-6 max-w-md text-base sm:text-lg font-body leading-relaxed text-white/70">Five success stories — built to deliver.</p>
           </div>
 
           {/* Mobile horizontal scroll */}
@@ -203,7 +189,7 @@ const SelectedWork = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/80 via-transparent to-transparent" />
                   </div>
                   <div className="mt-5 px-2">
-                    <p className="font-mono text-xs uppercase tracking-[0.16em] text-brand-accent">{project.category} / {project.year}</p>
+                    <p className="font-mono text-xs uppercase tracking-[0.16em] text-brand-accent">{project.category}</p>
                     <h3 className="mt-2 text-2xl sm:text-3xl font-display font-bold leading-tight group-hover:text-brand-accent transition-colors duration-300">{project.title}</h3>
                     <p className="mt-3 leading-relaxed text-white/70 text-sm sm:text-base">{project.description}</p>
                     <div className="mt-4 flex flex-wrap gap-1.5">

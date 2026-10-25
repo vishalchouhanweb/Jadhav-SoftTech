@@ -6,54 +6,54 @@ export const processSteps = [
   {
     id: '1',
     name: 'Discover',
-    title: 'We listen before we build.',
+    title: 'Tell us who you need.',
     description:
-      'Deep-dive workshops, audience research and signal mapping — we surface what actually matters before a single pixel is placed.',
+      'Share your tech stack, team gaps, timeline and budget - we turn it into a clear list of roles and skills.',
   },
   {
     id: '2',
-    name: 'Strategize',
-    title: 'A plan with teeth.',
+    name: 'Match',
+    title: 'Pre-vetted profiles, matched to you.',
     description:
-      'Priorities, architecture and measurable milestones — a clear system that turns raw insight into an executable roadmap.',
+      'We shortlist developers from our pre-vetted talent pool whose skills and experience fit your project.',
   },
   {
     id: '3',
-    name: 'Design',
-    title: 'Every pixel earns its place.',
+    name: 'Interview',
+    title: 'You pick your team.',
     description:
-      'High-fidelity interfaces, design systems and motion language — crafted until every interaction feels inevitable.',
+      'Interview the shortlisted developers yourself and choose the people you want on your team.',
   },
   {
     id: '4',
-    name: 'Build',
-    title: 'Engineered to scale.',
+    name: 'Onboard',
+    title: 'Up and running, fast.',
     description:
-      'Resilient frontends, robust APIs and clean integrations — production-grade engineering ready for real traffic.',
+      'Selected developers join your tools, stand-ups and workflow so real work starts quickly.',
   },
   {
     id: '5',
-    name: 'Launch & Grow',
-    title: 'Momentum, compounded.',
+    name: 'Scale',
+    title: 'Scale up or down.',
     description:
-      'Confident launches, continuous optimisation and AI-driven growth loops that keep compounding long after day one.',
+      'Add developers as your roadmap grows or release them when it doesn\'t - with ongoing support along the way.',
   },
 ];
 
-/* Agency-themed imagery per chapter */
+/* Imagery per step */
 export const processImages = {
   step1img1:
-    'https://images.unsplash.com/photo-1552664730-d307dba88f2a?auto=format&fit=crop&w=900&q=70',
+    '/images/process/s1a.jpg',
   step1img2:
-    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=70',
+    '/images/process/s1b.jpg',
   step2img1:
-    'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=900&q=70',
+    '/images/process/s2a.jpg',
   step2img2:
-    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=70',
+    '/images/process/s2b.jpg',
   step3img:
-    'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1000&q=70',
+    '/images/process/s3.jpg',
   step4img:
-    'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=70',
+    '/images/process/s4.jpg',
   step5img:
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=70',
+    '/images/process/s5.jpg',
 };

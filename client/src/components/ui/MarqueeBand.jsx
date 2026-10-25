@@ -1,7 +1,7 @@
 ﻿
 const MarqueeBand = () => {
-  const words = ['DESIGN', '✦', 'DEVELOP', '✦', 'AUTOMATE', '✦', 'GROW', '✦'];
-  const repeatCount = 8;
+  const words = ['Flyers Soft Private Limited', '✦', 'Toyoto', '✦', 'Infosys', '✦', 'The Growth Shark', '✦', 'Mist Mind Technologies', '✦', 'kSolves', '✦', 'Bloom', '✦', 'Atzean', '✦', 'BenchKart', '✦', 'Konark', '✦', 'Intelliatech', '✦', 'Softtude', '✦'];
+  const repeatCount = 3;
   const repeatedWords = Array(repeatCount).fill(words).flat();
 
   return (
@@ -20,9 +20,9 @@ const MarqueeBand = () => {
         {/* KDM-style massive stroke text marquee */}
         <div className="marquee-ticker">
           {repeatedWords.map((word, i) => (
-            <span key={i} className={`text-[3rem] md:text-[5rem] lg:text-[7rem] font-display font-extrabold uppercase tracking-wider mx-4 md:mx-8 ${
+            <span key={i} className={`text-[2rem] md:text-[3.25rem] lg:text-[4.5rem] font-display font-extrabold uppercase tracking-wider mx-4 md:mx-8 ${
               word === '✦' 
-                ? 'text-brand-accent text-[2rem] md:text-[3rem] lg:text-[4rem] self-center' 
+                ? 'text-brand-accent text-[1.25rem] md:text-[1.75rem] lg:text-[2.25rem] self-center' 
                 : i % 2 === 0 
                   ? 'stroke-text-filled text-brand-text/90' 
                   : 'stroke-text'

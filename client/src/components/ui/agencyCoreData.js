@@ -3,8 +3,8 @@
 // pulling Three.js into the parent chunk.
 export const NODES = [
   { label: 'Strategy' },
-  { label: 'Creative Direction' },
-  { label: 'Full-Stack Engineering' },
-  { label: 'AI & Automation' },
-  { label: 'Digital Growth' },
+  { label: 'Staff Augmentation' },
+  { label: 'Software Development' },
+  { label: 'HRMS Solutions' },
+  { label: 'Data, BI & CRM' },
 ];
