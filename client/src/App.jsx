@@ -19,6 +19,7 @@ const ServiceCategory = lazy(() => import('./pages/ServiceCategory'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const HireCategory = lazy(() => import('./pages/HireCategory'));
 const HireDetail = lazy(() => import('./pages/HireDetail'));
+const About = lazy(() => import('./pages/About'));
 
 const SectionFallback = () => (
   <div className="flex h-[40vh] items-center justify-center bg-brand-bg">
@@ -101,7 +102,7 @@ function AppContent() {
     if (loading) return;
 
     const lenis = lenisRef.current;
-    
+
     if (location.hash) {
       const id = location.hash.slice(1);
       let attempts = 0;
@@ -144,6 +145,7 @@ function AppContent() {
         <Suspense fallback={<SectionFallback />} key={location.pathname}>
           <Routes location={location}>
             <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
+            <Route path="/about" element={<PageTransition><About /></PageTransition>} />
             <Route path="/services/:category" element={<PageTransition><ServiceCategory /></PageTransition>} />
             <Route path="/services/:category/:serviceId" element={<PageTransition><ServiceDetail /></PageTransition>} />
             <Route path="/hire/:category" element={<PageTransition><HireCategory /></PageTransition>} />
