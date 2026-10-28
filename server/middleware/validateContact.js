@@ -4,8 +4,8 @@ const contactSchema = z.object({
   name: z.string().min(2).max(100),
   email: z.string().email().max(254),
   company: z.string().max(150).optional(),
-  service: z.enum(['hire-developer','software-development','hrms','data-bi-crm','other']).optional(),
-  budget: z.enum(['5k-15k','15k-50k','50k-100k','100k+']).optional(),
+  service: z.enum(['hire-developer','software-development','hrms','data-bi-crm','other']).optional().or(z.literal('')),
+  budget: z.enum(['5k-15k','15k-50k','50k-100k','100k+']).optional().or(z.literal('')),
   message: z.string().min(10).max(3000),
   website: z.string().max(0).optional()
 });

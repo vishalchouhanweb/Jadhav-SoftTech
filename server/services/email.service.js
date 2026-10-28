@@ -103,7 +103,7 @@ Submitted: ${new Date().toISOString()}`;
   const tp = getTransporter();
   if (!tp) {
     console.log('EMAIL (dev):', text);
-    return { success: true };
+    return { success: true, logged: true };
   }
 
   const info = await tp.sendMail({
