@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, ArrowRight, ChevronDown, Check, Sparkles, MoveRight } from 'lucide-react';
 import { HIRE_DATA } from '../data/hireData';
+import DeveloperShowcaseAuto from "../components/sections/DeveloperShowcaseAuto";
 
 /* ───────── Shared UI Pieces ───────── */
 
@@ -332,104 +333,106 @@ const HireDetail = () => {
       <GradientLine color={catData.color} />
 
       {/* ════════ SERVICE DETAILS ════════ */}
-      <section className="relative py-24 md:py-40 z-10">
-        <FloatingOrbs color={catData.color} />
-        
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <DeveloperShowcaseAuto>
+        <section className="relative py-24 md:py-40 z-10">
+          <FloatingOrbs color={catData.color} />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            {/* Features */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-8 inline-flex w-fit items-center gap-3 rounded-full border border-white/10 px-5 py-2.5"
-                style={{ background: 'rgba(255,255,255,0.03)' }}
-              >
-                <span className="h-2 w-2 shrink-0 self-center rounded-full animate-pulse" style={{ background: catData.color, boxShadow: `0 0 10px ${catData.color}` }} />
-                <span className="self-center font-mono text-[11px] font-medium uppercase leading-none tracking-[0.3em] text-white/70">
-                  Skills & Expertise
-                </span>
-              </motion.div>
-
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="font-display text-4xl md:text-5xl font-black text-white tracking-tight mb-8"
-              >
-                Core <span className="italic font-light text-transparent bg-clip-text" style={{ backgroundImage: catData.gradient }}>Skills</span>
-              </motion.h2>
-
-              <div className="space-y-4">
-                {service.features.map((feature, idx) => (
-                  <motion.div 
-                    key={feature} 
-                    initial={{ opacity: 0, x: -30, filter: 'blur(10px)' }}
-                    whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02, x: 10, backgroundColor: 'rgba(255,255,255,0.06)' }}
-                    transition={{ delay: 0.1 + (idx * 0.08), type: 'spring', stiffness: 100, damping: 20 }}
-                    className="group/feature flex items-center gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.03] transition-colors cursor-default relative overflow-hidden"
-                    style={{ backdropFilter: 'blur(10px)' }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover/feature:translate-x-full transition-transform duration-1000" />
-                    <div className="relative z-10 w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/feature:scale-110 group-hover/feature:rotate-12"
-                      style={{ background: `${catData.color}20`, boxShadow: `0 0 20px ${catData.color}40` }}
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+              {/* Features */}
+              <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="mb-8 inline-flex w-fit items-center gap-3 rounded-full border border-white/10 px-5 py-2.5"
+                  style={{ background: 'rgba(255,255,255,0.03)' }}
+                >
+                  <span className="h-2 w-2 shrink-0 self-center rounded-full animate-pulse" style={{ background: catData.color, boxShadow: `0 0 10px ${catData.color}` }} />
+                  <span className="self-center font-mono text-[11px] font-medium uppercase leading-none tracking-[0.3em] text-white/70">
+                    Skills & Expertise
+                  </span>
+                </motion.div>
+  
+                <motion.h2
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="font-display text-4xl md:text-5xl font-black text-white tracking-tight mb-8"
+                >
+                  Core <span className="italic font-light text-transparent bg-clip-text" style={{ backgroundImage: catData.gradient }}>Skills</span>
+                </motion.h2>
+  
+                <div className="space-y-4">
+                  {service.features.map((feature, idx) => (
+                    <motion.div 
+                      key={feature} 
+                      initial={{ opacity: 0, x: -30, filter: 'blur(10px)' }}
+                      whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02, x: 10, backgroundColor: 'rgba(255,255,255,0.06)' }}
+                      transition={{ delay: 0.1 + (idx * 0.08), type: 'spring', stiffness: 100, damping: 20 }}
+                      className="group/feature flex items-center gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.03] transition-colors cursor-default relative overflow-hidden"
+                      style={{ backdropFilter: 'blur(10px)' }}
                     >
-                      <Check className="w-5 h-5" style={{ color: catData.color }} />
-                    </div>
-                    <span className="relative z-10 text-white/80 text-lg font-medium tracking-wide group-hover/feature:text-white transition-colors">{feature}</span>
-                  </motion.div>
-                ))}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover/feature:translate-x-full transition-transform duration-1000" />
+                      <div className="relative z-10 w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover/feature:scale-110 group-hover/feature:rotate-12"
+                        style={{ background: `${catData.color}20`, boxShadow: `0 0 20px ${catData.color}40` }}
+                      >
+                        <Check className="w-5 h-5" style={{ color: catData.color }} />
+                      </div>
+                      <span className="relative z-10 text-white/80 text-lg font-medium tracking-wide group-hover/feature:text-white transition-colors">{feature}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+  
+              {/* Visual or related info - Magnetic Hover 3D Glass */}
+              <div className="relative perspective-1000">
+                <motion.div
+                  ref={iconRef}
+                  initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
+                  whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  viewport={{ once: true }}
+                  animate={{
+                    x: iconTransform.x,
+                    y: iconTransform.y,
+                    rotateX: iconTransform.rotateX,
+                    rotateY: iconTransform.rotateY,
+                  }}
+                  onMouseMove={handleIconMouseMove}
+                  onMouseLeave={handleIconMouseLeave}
+                  transition={{ 
+                    duration: 0.5, 
+                    type: "spring", 
+                    stiffness: 150, 
+                    damping: 15 
+                  }}
+                  className="relative p-10 rounded-3xl border border-white/[0.08] flex items-center justify-center overflow-hidden aspect-square cursor-pointer group"
+                  style={{ 
+                    background: 'rgba(255, 255, 255, 0.02)',
+                    backdropFilter: 'blur(30px)',
+                    WebkitBackdropFilter: 'blur(30px)',
+                    boxShadow: `0 30px 60px -20px ${catData.color}40, inset 0 1px 0 rgba(255,255,255,0.1), inset 0 0 20px rgba(255,255,255,0.02)`
+                  }}
+                >
+                  {/* Reactive Glow matching mouse */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] blur-[100px] rounded-full pointer-events-none opacity-30 group-hover:opacity-60 transition-opacity duration-500"
+                    style={{ background: catData.color }}
+                  />
+                  
+                  {/* Inner glass ring */}
+                  <div className="absolute inset-4 rounded-[1.5rem] border border-white/5 bg-white/[0.01]" />
+                  
+                  <Icon className="w-32 h-32 relative z-10 transition-transform duration-500 group-hover:scale-110" style={{ color: catData.color, filter: `drop-shadow(0 0 30px ${catData.color}80)` }} />
+                </motion.div>
               </div>
             </div>
-
-            {/* Visual or related info - Magnetic Hover 3D Glass */}
-            <div className="relative perspective-1000">
-              <motion.div
-                ref={iconRef}
-                initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
-                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                viewport={{ once: true }}
-                animate={{
-                  x: iconTransform.x,
-                  y: iconTransform.y,
-                  rotateX: iconTransform.rotateX,
-                  rotateY: iconTransform.rotateY,
-                }}
-                onMouseMove={handleIconMouseMove}
-                onMouseLeave={handleIconMouseLeave}
-                transition={{ 
-                  duration: 0.5, 
-                  type: "spring", 
-                  stiffness: 150, 
-                  damping: 15 
-                }}
-                className="relative p-10 rounded-3xl border border-white/[0.08] flex items-center justify-center overflow-hidden aspect-square cursor-pointer group"
-                style={{ 
-                  background: 'rgba(255, 255, 255, 0.02)',
-                  backdropFilter: 'blur(30px)',
-                  WebkitBackdropFilter: 'blur(30px)',
-                  boxShadow: `0 30px 60px -20px ${catData.color}40, inset 0 1px 0 rgba(255,255,255,0.1), inset 0 0 20px rgba(255,255,255,0.02)`
-                }}
-              >
-                {/* Reactive Glow matching mouse */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] blur-[100px] rounded-full pointer-events-none opacity-30 group-hover:opacity-60 transition-opacity duration-500"
-                  style={{ background: catData.color }}
-                />
-                
-                {/* Inner glass ring */}
-                <div className="absolute inset-4 rounded-[1.5rem] border border-white/5 bg-white/[0.01]" />
-                
-                <Icon className="w-32 h-32 relative z-10 transition-transform duration-500 group-hover:scale-110" style={{ color: catData.color, filter: `drop-shadow(0 0 30px ${catData.color}80)` }} />
-              </motion.div>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </DeveloperShowcaseAuto>
 
       <GradientLine color={catData.color} />
 

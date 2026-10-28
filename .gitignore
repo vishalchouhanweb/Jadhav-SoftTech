@@ -24,3 +24,4 @@ server/.env.*
 !server/.env.example
 server/logs
 *.log
+.vercel
