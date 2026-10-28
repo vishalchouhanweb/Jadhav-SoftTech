@@ -1,0 +1,75 @@
+// 1) Paste these imports at the top of index.js
+import databaseSqlData from './database-sql.js';
+import informaticaData from './informatica.js';
+import frontendDeveloperData from './frontend-developer.js';
+import uiUxData from './ui-ux.js';
+import webDeveloperData from './web-developer.js';
+import androidData from './android.js';
+import flutterData from './flutter.js';
+import reactNativeData from './react-native.js';
+import xamarinData from './xamarin.js';
+import swiftIosData from './swift-ios.js';
+import webDesignerData from './web-designer.js';
+import salesforceData from './salesforce.js';
+import microsoftDynamics365Data from './microsoft-dynamics-365.js';
+import zohoData from './zoho.js';
+import netsuiteData from './netsuite.js';
+import servicenowData from './servicenow.js';
+import sharepointData from './sharepoint.js';
+import odooData from './odoo.js';
+import powerPlatformData from './power-platform.js';
+import powerBiData from './power-bi.js';
+import dynamics365CrmData from './dynamics-365-crm.js';
+import businessCentralData from './business-central.js';
+import financeOperationsData from './finance-operations.js';
+import rpaData from './rpa.js';
+import workfrontData from './workfront.js';
+import shopifyData from './shopify.js';
+import magentoData from './magento.js';
+import bigcommerceData from './bigcommerce.js';
+import solidusData from './solidus.js';
+import wordpressData from './wordpress.js';
+import webflowData from './webflow.js';
+import qaEngineerData from './qa-engineer.js';
+import projectManagerData from './project-manager.js';
+import technicalLeadData from './technical-lead.js';
+import embeddedData from './embedded.js';
+import vbaData from './vba.js';
+
+// 2) Add these entries to the registry object in index.js
+  'database-sql': databaseSqlData,
+  'informatica': informaticaData,
+  'frontend-developer': frontendDeveloperData,
+  'ui-ux': uiUxData,
+  'web-developer': webDeveloperData,
+  'android': androidData,
+  'flutter': flutterData,
+  'react-native': reactNativeData,
+  'xamarin': xamarinData,
+  'swift-ios': swiftIosData,
+  'web-designer': webDesignerData,
+  'salesforce': salesforceData,
+  'microsoft-dynamics-365': microsoftDynamics365Data,
+  'zoho': zohoData,
+  'netsuite': netsuiteData,
+  'servicenow': servicenowData,
+  'sharepoint': sharepointData,
+  'odoo': odooData,
+  'power-platform': powerPlatformData,
+  'power-bi': powerBiData,
+  'dynamics-365-crm': dynamics365CrmData,
+  'business-central': businessCentralData,
+  'finance-operations': financeOperationsData,
+  'rpa': rpaData,
+  'workfront': workfrontData,
+  'shopify': shopifyData,
+  'magento': magentoData,
+  'bigcommerce': bigcommerceData,
+  'solidus': solidusData,
+  'wordpress': wordpressData,
+  'webflow': webflowData,
+  'qa-engineer': qaEngineerData,
+  'project-manager': projectManagerData,
+  'technical-lead': technicalLeadData,
+  'embedded': embeddedData,
+  'vba': vbaData,
