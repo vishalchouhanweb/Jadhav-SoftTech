@@ -247,7 +247,7 @@ function DesktopShowcase({ data }) {
               </AnimatePresence>
             </FitBox>
 
-            <div className="relative flex h-full items-end justify-center">
+            <div className="relative flex max-h-[500px] items-end justify-center">
               <AnimatePresence mode="wait">
                 <motion.div key={s.active} className="h-full"
                   initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -30 }}

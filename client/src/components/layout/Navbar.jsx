@@ -10,8 +10,9 @@ import RoleIcon from '../ui/RoleIcon';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
   { label: 'Hire Developer', href: '/hire', dropdown: true },
+  { label: 'Our Services', href: '/our-services' },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 

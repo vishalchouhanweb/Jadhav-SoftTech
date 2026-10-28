@@ -1825,3 +1825,23 @@ html.lenis, html.lenis body {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* ===== Our Services / Software Development page extras ===== */
+@keyframes floatVertical {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.os-service-card {
+  will-change: transform, box-shadow;
+}
+.os-service-card:hover {
+  transform: translateY(-4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .os-float-card,
+  .os-service-card:hover {
+    animation: none !important;
+    transform: none !important;
+  }
+}

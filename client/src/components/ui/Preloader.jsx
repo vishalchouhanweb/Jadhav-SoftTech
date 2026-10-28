@@ -12,7 +12,7 @@ import { motion } from 'motion/react';
 const EASE_EXPO = [0.16, 1, 0.3, 1];
 const EASE_INOUT = [0.44, 0, 0.56, 1];
 
-const TITLE = 'jadhavsofttech';
+const TITLE = 'JadhavSofttech';
 const SUBTITLE = 'Creative Technology';
 
 const BLOB_PATH =

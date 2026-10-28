@@ -20,6 +20,8 @@ const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const HireCategory = lazy(() => import('./pages/HireCategory'));
 const HireDetail = lazy(() => import('./pages/HireDetail'));
 const About = lazy(() => import('./pages/About'));
+const OurServices = lazy(() => import('./pages/OurServices'));
+const SoftwareServiceDetail = lazy(() => import('./pages/SoftwareServiceDetail'));
 
 const SectionFallback = () => (
   <div className="flex h-[40vh] items-center justify-center bg-brand-bg">
@@ -150,6 +152,8 @@ function AppContent() {
             <Route path="/services/:category/:serviceId" element={<PageTransition><ServiceDetail /></PageTransition>} />
             <Route path="/hire/:category" element={<PageTransition><HireCategory /></PageTransition>} />
             <Route path="/hire/:category/:serviceId" element={<PageTransition><HireDetail /></PageTransition>} />
+                        <Route path="/our-services" element={<PageTransition><OurServices /></PageTransition>} />
+            <Route path="/our-services/:serviceId" element={<PageTransition><SoftwareServiceDetail /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
           </Routes>
         </Suspense>

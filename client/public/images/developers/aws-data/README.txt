@@ -1,4 +1,4 @@
-Transparent PNG (no background), portrait ~800x1120. Same naam se replace karo:
+Transparent PNG (no background), portrait ~800x1120. replace the same image with the same name 
 
 01.png -> Akshay Shrivastava
 02.png -> Prabhat Shukla

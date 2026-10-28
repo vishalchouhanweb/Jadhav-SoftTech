@@ -1,4 +1,4 @@
-Transparent PNG (no background), portrait ~800x1120. Same naam se replace karo:
+Transparent PNG (no background), portrait ~800x1120. Replace the image with same name.
 
 01.png -> Chhavi Panchal
 02.png -> Saurabh Agrawal
